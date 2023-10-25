@@ -1,4 +1,5 @@
 public class CommissionEmployee extends Object{
+
     private String firstName;
     private String lastName;
     private String socialSecurityNumber;
@@ -66,10 +67,10 @@ public class CommissionEmployee extends Object{
     @Override
     public String toString(){
         return String.format(" %s: %s %s\n%s: %s\n%s: %.2f\n%s: %.2f",
-        "Commission Employee", firstName, lastName,
-        "Social Security Number", socialSecurityNumber,
-        "Gross sales", grossSales,
-        "Commission Rate", commissionRate);
+        "Commission Employee", getFirstName(), getLastName(),
+        "Social Security Number", getSocialSecurityNumber(),
+        "Gross sales", getGrossSales(),
+        "Commission Rate", getCommissionRate());
 
     }
 
