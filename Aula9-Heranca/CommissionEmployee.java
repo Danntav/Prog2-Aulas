@@ -13,7 +13,7 @@ public class CommissionEmployee extends Object{
         lastName = last;
         socialSecurityNumber = ssn;
         setGrossSales(sales);
-        setCommissionRate( rate );
+        setCommissionRate(rate);
     }
 
 
