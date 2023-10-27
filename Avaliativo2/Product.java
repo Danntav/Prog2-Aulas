@@ -1,12 +1,7 @@
 import java.util.Scanner;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Product{
     
-    private static Date input_Date;
     private String name;
     private double price;
 
@@ -36,7 +31,7 @@ public class Product{
 
     //Função que terá @Override nos demais
     public String priceTag(){
-        return String.format("%s $ %s", getName(), getPrice());
+        return String.format("%s $%s", getName(), getPrice());
     }
 
 
@@ -60,7 +55,7 @@ public class Product{
             System.out.printf("Product #%s data\n", cont+1);
 
             
-            System.out.print("Commom, used or imported (c|u|i)?");
+            System.out.print("Commom, used or imported (c|u|i)? ");
             char option = input.next().charAt(0);
 
             System.out.print("Name: ");
@@ -75,17 +70,8 @@ public class Product{
                 System.out.print("Manufacture Date (DD/MM/YYYY): ");
 
                 //Formatação de string para data
-                String dateString = input.next();
-                DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                try {
-                    Date input_Date = formatter.parse(dateString);
-                    products[cont] = new UsedProduct(input_Name, input_Price, input_Date);
-                    }
-                catch (ParseException e) {
-                    System.out.println("Error parsing date: " + e.getMessage());
-                    }
-                    
-                
+                String input_Date = input.next(); 
+                products[cont] = new UsedProduct(input_Name, input_Price, input_Date);    
             }
 
             

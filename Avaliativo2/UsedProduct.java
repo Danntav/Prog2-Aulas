@@ -1,10 +1,9 @@
-import java.util.Date;
 
 public class UsedProduct extends Product{
     
-    private Date manufectureDate;
+    private String manufectureDate;
 
-    public UsedProduct(String name, double price, Date manufectureDate){
+    public UsedProduct(String name, double price, String manufectureDate){
 
         super(name, price);
         
@@ -12,17 +11,17 @@ public class UsedProduct extends Product{
 
     }
 
-    public void setManufectureDate(Date manufectureDate){
+    public void setManufectureDate(String manufectureDate){
         this.manufectureDate = manufectureDate;
     }
 
-    public Date getManufectureDate(){
+    public String getManufectureDate(){
         return manufectureDate;
     }
 
     @Override
     public String priceTag(){
-        return String.format("%s (Used) (Manufecture Date %s)", super.priceTag(), getManufectureDate());
+        return String.format("%s (Used) $%s (Manufecture Date %s)", super.getName(), super.getPrice(), getManufectureDate());
 
     }
 
